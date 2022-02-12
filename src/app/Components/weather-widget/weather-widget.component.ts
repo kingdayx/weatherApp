@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-weather-widget',
@@ -9,6 +9,7 @@ export class WeatherWidgetComponent implements OnInit {
   constructor() {}
 
   WeatherData: any;
+  @Input() imgURL = '';
   ngOnInit(): void {
     this.getWeatherData();
     console.log(this.WeatherData);
@@ -29,5 +30,7 @@ export class WeatherWidgetComponent implements OnInit {
     this.WeatherData.max_temp = (this.WeatherData.max_temp - 273.15).toFixed(0);
     this.WeatherData.min_temp = (this.WeatherData.min_temp - 273.15).toFixed(0);
     // this.WeatherData.temp_feels_like = (this.WeatherData.)
+    this.WeatherData.consolidated_weather.humidity = this.WeatherData.humidity;
+    this.WeatherData.title = this.WeatherData.title;
   }
 }

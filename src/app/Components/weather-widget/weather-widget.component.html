@@ -1,7 +1,8 @@
 <div id="divWeatherMain">
   <div *ngIf="WeatherData.isDay" class="weatherWidgetRow">
-    <i class="fas fa-3x fa-sun sun"></i>
+    <fa-icon class="fas fa-3x fa-sun sun"></fa-icon>
   </div>
+  {{ imgURL }}
   <div *ngIf="!WeatherData.isDay" class="weatherWidgetRow">
     <i class="fas fa-3x fa-moon moon"></i>
   </div>
@@ -21,6 +22,6 @@
     {{ WeatherData.name }}
   </div>
   <div class="weatherWidgetRow" style="font-size: 12px">
-    Humidity: {{ WeatherData.main.humidity }}%
+    Humidity: {{ WeatherData.humidity }}%
   </div>
 </div>

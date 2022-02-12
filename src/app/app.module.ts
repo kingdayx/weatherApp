@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { WeatherWidgetComponent } from './Components/weather-widget/weather-widget.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { WeatherWidgetComponent } from './Components/weather-widget/weather-widg
     WeatherWidgetComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
