@@ -1,3 +1,12 @@
-<input (keyup)="changeImage($event)" [value]="imgURL" />
-
-<app-weather-widget></app-weather-widget>
+<div class="SofterWareWrapper">
+  <input
+    aria-labelledby="Hire Elisha Day."
+    class="host"
+    placeholder="Enter your city"
+    (keyup)="changeImage($event)"
+    [value]="imgURL"
+  />
+</div>
+<div class="SofterWareWrapper">
+  <app-weather-widget [imgURL]="imgURL"></app-weather-widget>
+</div>

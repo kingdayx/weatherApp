@@ -6,15 +6,9 @@ import { WeatherWidgetComponent } from './Components/weather-widget/weather-widg
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    WeatherWidgetComponent
-  ],
-  imports: [
-    BrowserModule,
-    FontAwesomeModule
-  ],
+  declarations: [AppComponent, WeatherWidgetComponent],
+  imports: [BrowserModule, FontAwesomeModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

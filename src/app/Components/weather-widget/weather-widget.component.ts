@@ -14,6 +14,19 @@ export class WeatherWidgetComponent implements OnInit {
     this.getWeatherData();
     console.log(this.WeatherData);
     console.log('sunset', this.WeatherData.sun_set);
+    console.log('input', this.WeatherData.consolidated_weather[0]);
+    this.WeatherData.humidity =
+      this.WeatherData.consolidated_weather[0].humidity;
+    this.WeatherData.today =
+      this.WeatherData.consolidated_weather[0].applicable_date;
+    this.WeatherData.temp_min = (
+      this.WeatherData.consolidated_weather[0].max_temp * 10
+    ).toFixed(0);
+    this.WeatherData.temp_max = (
+      this.WeatherData.consolidated_weather[0].min_temp * 10
+    ).toFixed(0);
+    this.WeatherData.temp_feels_like =
+      this.WeatherData.consolidated_weather[0].predictability;
   }
 
   getWeatherData() {
@@ -25,12 +38,19 @@ export class WeatherWidgetComponent implements OnInit {
   setWeatherData(data: any) {
     this.WeatherData = data;
     this.WeatherData.temp_celcius = (
-      this.WeatherData.the_temp - 273.15
+      this.WeatherData.consolidated_weather[0].the_temp - 273.15
     ).toFixed(0);
-    this.WeatherData.max_temp = (this.WeatherData.max_temp - 273.15).toFixed(0);
-    this.WeatherData.min_temp = (this.WeatherData.min_temp - 273.15).toFixed(0);
-    // this.WeatherData.temp_feels_like = (this.WeatherData.)
+    this.WeatherData.max_temp = (
+      this.WeatherData.consolidated_weather[0].max_temp - 273.15
+    ).toFixed(0);
+    this.WeatherData.min_temp = (
+      this.WeatherData.consolidated_weather[0].min_temp ** 10
+    ).toFixed(0);
+    this.WeatherData.temp_feels_like =
+      this.WeatherData.consolidated_weather[0].temp_feels_like;
     this.WeatherData.consolidated_weather.humidity = this.WeatherData.humidity;
     this.WeatherData.title = this.WeatherData.title;
+    this.WeatherData.today =
+      this.WeatherData.consolidated_weather.applicable_date;
   }
 }

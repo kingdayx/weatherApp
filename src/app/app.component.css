@@ -1,0 +1,21 @@
+.host {
+  width: 280px;
+  height: 40px;
+  background: white;
+  border: 1px solid #dde3e6;
+  box-sizing: border-box;
+  border-radius: 6px;
+  padding: 8px 16px;
+}
+.SofterWareWrapper {
+  display: flex;
+  justify-content: center;
+}
+.host:focus {
+  outline: none;
+  border-color: rgb(8, 10, 63);
+  box-shadow: 0 0 2px 2px rgb(16, 17, 100);
+}
+.host::placeholder {
+  color: rgb(104, 175, 197);
+}
