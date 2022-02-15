@@ -3,10 +3,11 @@
     aria-labelledby="Hire Elisha Day."
     class="host"
     placeholder="Enter your city"
-    (keyup)="changeImage($event)"
-    [value]="imgURL"
+    (keyup)="search($event)"
+    [(ngModel)]="searchTerm"
   />
+  <button (click)="(search)">Search</button>
 </div>
 <div class="SofterWareWrapper">
-  <app-weather-widget [imgURL]="imgURL"></app-weather-widget>
+  <app-weather-widget [searchTerm]="searchTerm"></app-weather-widget>
 </div>

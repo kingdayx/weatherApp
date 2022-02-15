@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'weatherApp';
-  imgURL: string = '';
-  changeImage(e: KeyboardEvent) {
-    this.imgURL = (e.target as HTMLInputElement).value;
+  searchTerm: string = '';
+  search(e: KeyboardEvent) {
+    this.searchTerm = (e.target as HTMLInputElement).value;
   }
 }
